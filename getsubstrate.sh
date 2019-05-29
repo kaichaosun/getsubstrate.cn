@@ -50,6 +50,8 @@ else
 fi
 
 if ! which rustup >/dev/null 2>&1; then
+    export RUSTUP_DIST_SERVER=https://mirrors.ustc.edu.cn/rust-static
+    export RUSTUP_UPDATE_ROOT=https://mirrors.ustc.edu.cn/rust-static/rustup
 	curl https://mirrors.ustc.edu.cn/rust-static/rustup.sh -sSf | sh -s -- -y
 	source ~/.cargo/env
 	rustup default stable
